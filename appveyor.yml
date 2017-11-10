@@ -21,6 +21,7 @@ test_script:
     dotnet xunit -configuration AppVeyor -xml ApiClientTestResults.xml
 artifacts:
 - path: '**/*.nupkg'
+  name: Nuget
 nuget:  
   account_feed: true
   project_feed: true
