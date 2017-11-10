@@ -21,3 +21,13 @@ test_script:
     dotnet xunit -configuration AppVeyor -xml ApiClientTestResults.xml
 artifacts:
 - path: '**/*.nupkg'
+nuget:  
+  account_feed: true
+  project_feed: true
+deploy:
+- provider: NuGet
+  server: https://ci.appveyor.com/nuget/headset
+  api_key:
+    secure: uizfzdk3UG8aBRKJOAq/EDSJQMbUtZCwT8scGJqhxmM=
+  skip_symbols: true
+  artifact: Nuget
